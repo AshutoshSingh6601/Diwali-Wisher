@@ -11,22 +11,24 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const HomePage = ({handelBurstCracker}) => {
 
-  let navigate = useNavigate()
+  let userName = new URLSearchParams(location.search).get('name')
 
-  useEffect(() => {
-    if(localStorage.getItem('Wisher')){
-        navigate('/')
-    }
-    else{
-        navigate('/name')
-    }
-    // eslint-disable-next-line
-  }, []);
+  // let navigate = useNavigate()
+
+  // useEffect(() => {
+  //   if(localStorage.getItem('Wisher')){
+  //       navigate('/')
+  //   }
+  //   else{
+  //       navigate('/name')
+  //   }
+  //   // eslint-disable-next-line
+  // }, []);
 
   return (
     <div className="relative overflow-x-hidden bg-gradient-to-r from-[#ce6051] to-[#9f2f76] h-screen w-full text-gray-50 flex flex-col items-center justify-center">
     <div className="phone:w-5/12 w-11/12">
-      <h1 className="phone:text-6xl text-3xl font-semibold phoen:font-bold text-shadow">Happy Diwali <span className='capitalize'>{localStorage.getItem('Wisher')}</span>!</h1>
+      <h1 className="phone:text-6xl text-3xl font-semibold phoen:font-bold text-shadow">Happy Diwali <span className='capitalize'>{userName}</span>!</h1>
       <p className="phone:py-10 py-5 text-2xl text-shadow">
         Let’s dive into the sweets, light up the crackers, <br className='hidden phone:block' /> share the
         laughs and build memories that light up your hearts as much as the
